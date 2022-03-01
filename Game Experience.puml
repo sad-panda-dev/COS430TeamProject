@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+User -> App: Run Program
+App -> GameEngine
+GameEngine -> InitializeGame
+InitializeGame -> StartScreen
+StartScreen --> User: Prompts User To Play a Game
+User -> GameEngine : User selects to start new game
+GameEngine -> PlayGameState: GameEngine Initiates new game and user plays
+User -> PlayGameState: User pauses the game
+PlayGameState --> GameEngine:  and the GameEngine suspends
+User -> GameEngine: User unpauses
+GameEngine -> PlayGameState: GameEngine resumes
+User -> GameEngine: User quits or loses
+PlayGameState -> GameEngine: PlayGameState terminates and reffers back to the gameengine
+GameEngine -> GameOverState: GameEngine initiates the gameover screen
+GameEngine -> HighScoreState: GameEngine determines if User score is a high score or not
+HighScoreState ->
+
+@enduml
