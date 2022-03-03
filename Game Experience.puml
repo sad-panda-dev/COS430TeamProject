@@ -6,18 +6,26 @@ autonumber
 User -> App: Run Program
 App -> GameEngine
 GameEngine -> InitializeGame
-InitializeGame -> StartScreen
-StartScreen --> User: Prompts User To Play a Game
+InitializeGame -> StartScreenState
+StartScreenState -> Display
+Display --> User: Prompts User To Play a Game
 User -> GameEngine : User selects to start new game
 GameEngine -> PlayGameState: GameEngine Initiates new game and user plays
+PlayGameState -> Display
 User -> PlayGameState: User pauses the game
 PlayGameState --> GameEngine:  and the GameEngine suspends
+GameEngine -> Display
 User -> GameEngine: User unpauses
 GameEngine -> PlayGameState: GameEngine resumes
+PlayGameState -> Display
 User -> GameEngine: User quits or loses
 PlayGameState -> GameEngine: PlayGameState terminates and reffers back to the gameengine
 GameEngine -> GameOverState: GameEngine initiates the gameover screen
+GameOverState -> Display
 GameEngine -> HighScoreState: GameEngine determines if User score is a high score or not
-HighScoreState ->
+HighScoreState -> Display
+GameEngine -> StartScreenState
+StartScreenState -> User: Prompts user to start new game
+StartScreenState -> Display
 
 @enduml
