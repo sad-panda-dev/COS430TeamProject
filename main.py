@@ -19,7 +19,7 @@ has asked for we could just use this version of the game for the first itteratio
 implementing the items above for the next iterations and scrap any of my suggestions about what we might
 want to achieve in further itterations. Again this is all things to discuss.
 '''
-from asyncio.windows_events import NULL
+#from asyncio.windows_events import NULL
 from gameClasses import Snake, Food, Portal
 import pygame as pg
 import setup as s

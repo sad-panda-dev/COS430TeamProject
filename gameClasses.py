@@ -34,6 +34,7 @@ class Snake(object):
         # this detects if the snake has run into itself causing game over
         if len(self.positions) > 2 and new in self.positions[2:]:
             self.game_over
+            sys.exit()
         else:
             self.positions.insert(0, new)
             if len(self.positions) > self.length:
