@@ -11,7 +11,9 @@ class Snake(object):
         self.positions = [((s.SCREEN_WIDTH / 2), (s.SCREEN_HEIGHT / 2))]
         self.direction = random.choice([s.UP, s.DOWN, s.LEFT, s.RIGHT])
         # just set up to be a green square for now, can add sprite to change that
-        self.color = (0, 230, 0)
+        #self.color = (0, 230, 0)
+        #changed to black
+        self.color = (0, 0, 0)
         # initiate the score to zero
         self.score = 0
 
