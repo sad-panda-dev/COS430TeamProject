@@ -19,20 +19,16 @@ has asked for we could just use this version of the game for the first itteratio
 implementing the items above for the next iterations and scrap any of my suggestions about what we might
 want to achieve in further itterations. Again this is all things to discuss.
 '''
-#from asyncio.windows_events import NULL
-from gameClasses import Snake, Food, Portal
+
+import sys
+import Snake as sn
+import Food as fd
+import Portal as pd
 import pygame as pg
 import setup as s
 
-
-# function to draw the grid
-''' def draw_grid(surface):
-    for y in range(0, int(s.GRID_HEIGHT)):
-        for x in range(0, int(s.GRID_WIDTH)):
-            rectangle = pg.Rect((x * s.GRID_SIZE, y * s.GRID_SIZE), (s.GRID_SIZE, s.GRID_SIZE))
-            pg.draw.rect(surface, (196, 249, 255), rectangle) '''
     
-# function to draw the grid after refactory
+# function to draw the grid after refactoring
 def draw_grid(surface):
 
     for y in range(0, int(s.GRID_HEIGHT)):
@@ -45,73 +41,171 @@ def draw_grid(surface):
                 rr = pg.Rect((x*s.GRID_SIZE, y*s.GRID_SIZE),
                              (s.GRID_SIZE, s.GRID_SIZE))
                 pg.draw.rect(surface, (196, 249, 255), rr)
-                
 
-# function to display message to the screen
-def message_to_screen(text, color, x, y):
-    screen = pg.display.set_mode((s.SCREEN_WIDTH, s.SCREEN_HEIGHT), 0, 32)
-    font = pg.font.SysFont("comicsansms", 32)
+''' Defines text rectangle and centers it on the screen. Offset argument specifies offset from the horizontal center
+and is convenient when multiple lines of text are written to the screen
+    :param screen: the screen object 
+    :param text: string to be written to screen
+    :param font_size: integer size of font
+    :param color: color in RGB format
+    :param offset: integer horizontal offset from center 
+    '''
+def message_to_screen(screen, text, font_size, color, offset = 0):
+    font = pg.font.SysFont("arialblack", font_size)
     screen_text = font.render(text, True, color)
-    screen.blit(screen_text, [x, y])
+    text_rect = screen_text.get_rect()
+    text_rect.center = (s.SCREEN_HEIGHT // 2 , s.SCREEN_WIDTH // 2 + offset)
+    screen.blit(screen_text, text_rect)
     pg.display.update()
 
-                
-# function to display menu to the screen when game is initiated          
+'''Defines the starting screen: sets the color of background, and text to be written on screen. Calls 
+message_to_screen() to write text. Listens for user input until 'S' is pressed.
+'''
 def start_menu():
     screen = pg.display.set_mode((s.SCREEN_WIDTH, s.SCREEN_HEIGHT), 0, 32)
     screen.fill((0,0,0))
-    message_to_screen("PRESS \"S\" TO START GAME", (255, 255, 255), int(s.SCREEN_WIDTH * 0.222), int(s.SCREEN_WIDTH / 2))
-    start_press = True
-    while start_press:
+    text = 'SNAKE TELEPORTER'
+    text2 = 'PRESS \"S\" TO START GAME'
+    message_to_screen(screen, text ,42, (124,252,0))
+    message_to_screen(screen, text2 ,20, (124,252,0), 70)
+    start_press = False
+    while not start_press:
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_s:
-                    start_press = False
+                    start_press = True
 
-def main_game_loop():
-    # from pygame init to drawgrid() is all boilerplate for pygame environment
-    
-    
-    pg.init()
-    start_menu()
+''' Listens for key events and runs the game according to pressed keys.
+Navigates the movement of snake object when up,down,left or right keys are pressed. Closes the window when 'X' 
+in the right corner of the window is pressed or when user hits Escape key. Pauses game if user hits Space key. 
+'''
+def handle_keys(snake,screen, clock):
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            pg.quit()
+            sys.exit()
+        elif event.type == pg.KEYDOWN:
+            if event.key == pg.K_UP:
+                snake.turn(s.UP)
+            elif event.key == pg.K_DOWN:
+                snake.turn(s.DOWN)
+            elif event.key == pg.K_LEFT:
+                snake.turn(s.LEFT)
+            elif event.key == pg.K_RIGHT:
+                snake.turn(s.RIGHT)
+            elif event.key == pg.K_SPACE:
+                pause(screen, clock)
+            elif event.key == pg.K_ESCAPE:
+                 pg.quit()
+                 sys.exit()
+
+''' Pauses the game. Displays text on the screen prompting user to hit Space to continue.
+    :param screen: the screen object
+    :param clock: clock for regulating frames for game
+'''
+def pause(screen, clock):
+    paused = True
+    while paused:
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                pg.quit()
+                sys.exit()
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_SPACE:
+                    paused = False
+        screen.fill((0, 0, 0))
+        text = 'PAUSED'
+        text2 = 'Press Space to continue'
+        message_to_screen(screen, text ,42, (124,252,0))
+        message_to_screen(screen, text2, 20, (124, 252, 90), 60)
+        clock.tick(5)
+'''Notifies that the game has ended. Displays the score and prompts user to play again. Listens for user input and
+if user hits 'S' key, then starts another game.
+    :param screen: the screen object
+    :param clock: clock for the game
+    :param score: integer user score 
+'''
+def game_over(screen, clock, score):
+    screen.fill((0, 0, 0))
+    text = 'GAME OVER'
+    text2 = 'Your score is ' + str(score)
+    text3 = 'Press S to play again'
+    message_to_screen(screen, text, 42, (124, 252, 0))
+    message_to_screen(screen, text2, 20, (124, 252, 0), 70)
+    message_to_screen(screen, text3, 20, (124, 252, 0), 100)
+    clock.tick(5)
+    play_again = False
+    while not play_again:
+        for event in pg.event.get():
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_s:
+                    play_again = True
+    run()
+'''Gets the position of the Snake object parameter, and checks if snake colided with itself. If this is the case, 
+calls game_over(), othervise moves the snake object one square ahead.
+    :param screen: screen object
+    :param clock: clock for the game
+    :param snake: snake object
+'''
+def move_snake(screen, clock, snake):
+
+    curr = snake.get_head_position()
+    x, y = snake.direction
+    new = (((curr[0] + (x * s.GRID_SIZE)) % s.SCREEN_WIDTH),
+           (curr[1] + (y * s.GRID_SIZE)) % s.SCREEN_HEIGHT)
+
+    if len(snake.positions) > 2 and new in snake.positions[2:]:
+        game_over(screen, clock, snake.score)
+    else:
+        snake.positions.insert(0, new)
+        if len(snake.positions) > snake.length:
+            snake.positions.pop()
+
+'''Runs the game. Defines the clock, sets the screen, and defines snake, food and portal objects. Runs the while 
+loop until snake collides with its tail or user exits the screen.
+'''
+def run():
     clock = pg.time.Clock()
     screen = pg.display.set_mode((s.SCREEN_WIDTH, s.SCREEN_HEIGHT), 0, 32)
 
     surface = pg.Surface(screen.get_size())
     surface = surface.convert()
     draw_grid(surface)
+    my_font = pg.font.SysFont("arialblack", 30)
 
-    my_font = pg.font.SysFont("comicsansms", 30)
-
-    snake = Snake()
-    food = Food()
-    portal = Portal()
-    
-
+    snake = sn.Snake()
+    food = fd.Food()
+    portal = pd.Portal()
     # This is the main loop for game
     while True:
         # rate at which the game refreshes
         clock.tick(9)
         # handle keydown events
-        snake.handle_keys()
+        handle_keys(snake, screen, clock)
         draw_grid(surface)
-        snake.move()
-                   
+        move_snake(screen, clock, snake)
+
         if snake.get_head_position() == food.position:
             snake.length += 1
             snake.score += 1
             food.random_position()
-            
+
         if snake.get_head_position() == portal.position:
             snake.hit_portal()
-            
+
         snake.draw(surface)
         food.draw(surface)
-        #portal.draw(surface)
+        # portal.draw(surface)
         screen.blit(surface, (0, 0))
         text = my_font.render("Score {0}".format(snake.score), 1, (0, 0, 0))
         screen.blit(text, (5, 10))
         pg.display.update()
 
 
-main_game_loop()
+def main():
+    pg.init()
+    start_menu()
+    run()
+
+
+main()
