@@ -27,7 +27,7 @@ To be completed by the group members...
 ## Milestones and Timelines
 
 #### Iteration #1
-<p> Design, develop, test and deploy a functioning prototype of the traditional game of snake with the added element of including the concept of teleporters. Based on its functionality we have decided to use python's pygame library to devlop the game.</p>
+<p> Design, develop, test and deploy a functioning prototype of the traditional game of snake. Based on its functionality we have decided to use python's pygame library to devlop the game.</p>
 
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
@@ -40,7 +40,7 @@ To be completed by the group members...
 
 
 #### Iteration #2
-<p>Implement the functionality of keeping a table of high scores. Durring this iteration we will first focus on storing that data on the local machine, with the key for the table being a 3 character string for the users initials, just like in traditional arcade games. If that proves to be too easy we will then move on to storing the data within an online database. (Possible second user story) Depending on the time it takes to create the functionality of the high score, we may then move on to creating a basic website which will be finalized within the final iteration.</p>
+<p>Design and implement the functionality telporters within the snake game as well as keeping a table of high scores. Durring this iteration we will first focus on storing that data on the local machine, with the key for the table being a 3 character string for the users initials, just like in traditional arcade games. If that proves to be too easy we will then move on to storing the data within an online database. (Possible second user story) Depending on the time it takes to create the functionality of the high score, we may then move on to creating a basic website which will be finalized within the final iteration.</p>
 
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
