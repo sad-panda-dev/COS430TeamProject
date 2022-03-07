@@ -4,7 +4,7 @@
   <br> <strong>Group ID:</strong> G 03</br>
   <br> <strong>Group Members:</strong> Richard, Aleksandra, Abdallah</br>
   <br> <strong>Project Title:</strong> A game of Snake where there is an added element of teleporters.</br>
-  <br> <strong>Project Description:</strong> ?</br>
+  <br> <strong>Project Description:</strong> Our team was given the task of designing, developing and implementating a software product that was suggested by a customer (in this case one of our fellow classmates). Following the Agile Software Development Method we will approach the problem through 3 seperate iterations over the course of the semester. For each iteration we will address 1 user story and provide a deliverable product upon completion of each iteration. For version control and documentation we will be using this github repository, and for continuous integration we will be using circleci. This continuous integration will ensure that each individual part of the software is made properly, pass quality assurance tests as well as be assembled properly. The continuous delivery that the assembled product is efficient.</br>
   <br> <strong>Application Type: </strong> ?</br>
  </p>
 
