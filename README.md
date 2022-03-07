@@ -54,6 +54,8 @@ To be completed by the group members...
 
 
 #### Iteration #3
+<p>We will either be creating the website or finishing it depending on the progress made within the second iteration. The functionality of the website is to host a place where members of the class can download the game to play it. The initial idea is to use the django framework to develop the website. The second functionality of the website would be then to store a high score database, which upon generation of a score within any instance of the game, rather than storing the high score on the users local machine the high score could then be stored within the high score database on the website.</p>
+
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
 |  User Story  | To be completed by the group members...                                                                              |
