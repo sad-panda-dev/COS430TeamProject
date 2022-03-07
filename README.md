@@ -27,6 +27,7 @@ To be completed by the group members...
 ## Milestones and Timelines
 
 #### Iteration #1
+<p> Design, develop, test and deploy a functioning prototype of the traditional game of snake with the added element of including the concept of teleporters. Based on its functionality we have decided to use python's pygame library to devlop the game. </p>
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
 |  User Story  | To be completed by the group members...                                                                              |
