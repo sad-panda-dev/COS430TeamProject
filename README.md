@@ -66,6 +66,10 @@ To be completed by the group members...
 |    EEE       | To be completed by the group members...                                                                              |
 
 
+**Final Team Presentation:**
+Upon completion of the three iterations we will then as a group present the final software product that we have developed.
+
+
 ## UML Diagrams 
 #### [1] Use Case Diagrams
 <p align="justify">
@@ -94,10 +98,3 @@ To be completed by the group members...
 <br>[2: Reference BBB](https://usm.maine.edu/)</br>
 <br>[3: Reference CCC](https://usm.maine.edu/)</br>
 
-
-
-
-
-
-**Final Team Presentation:**
-Upon completion of the three iterations we will then as a group present the final software product that we have developed.
