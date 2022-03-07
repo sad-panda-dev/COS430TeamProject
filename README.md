@@ -1,11 +1,11 @@
 # COS 430 (Software Engineering): Term Project
 
 <p align="justify">
-  <br> <strong>Group ID:</strong>G 03</br>
+  <br> <strong>Group ID:</strong> G 03</br>
   <br> <strong>Group Members:</strong> Richard, Aleksandra, Abdallah</br>
   <br> <strong>Project Title:</strong> A game of Snake where there is an added element of teleporters.</br>
-  <br> <strong>Project Description:</strong>?</br>
-  <br> <strong>Application Type: </strong>?</br>
+  <br> <strong>Project Description:</strong> ?</br>
+  <br> <strong>Application Type: </strong> ?</br>
  </p>
 
 ## Executive Summary
