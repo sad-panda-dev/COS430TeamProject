@@ -14,13 +14,13 @@
 Below, you will find a brief executive summary of our term project, including how the project will be relevant to end-users.
 </p>
 <p align="justify">
-To be completed by the group members...
+Our team was tasked with designing, developing and deploying a snake game with the added functionality of teleportation.
 </p>
 
 ## Problem Statement
 
 <p align="justify">
-To be completed by the group members...
+Given this task we set out to design a cross-platform desktop application that would create an easy enjoyable experience for the end user. The game of snake is one of the oldest arcade style games around and has been emulated and modified every which way. It was even depicted in the 1982 classic movie Tron, but instead of a snake the game was given the modification of being on a light cycle. But our classmate gave us the challenge of creating a variation of this classic game that we had yet to see, adding teleportation. With this new twist we hoped to create a small revitalization of the classic.
 </p>
 
 
@@ -73,7 +73,7 @@ Upon completion of the three iterations we will then as a group present the fina
 ## UML Diagrams 
 #### [1] Use Case Diagrams
 <p align="justify">
-To be completed by the group members...
+<img width="412" alt="Screen Shot 2022-03-07 at 12 22 54 PM" src="https://user-images.githubusercontent.com/80590323/157153059-6a9851a0-5f13-47ee-9546-a7e5fc401e4f.png">
 </p>
 
 #### [2] Class Diagrams
@@ -97,4 +97,5 @@ To be completed by the group members...
 <br>[1: Reference AAA](https://usm.maine.edu/)</br>
 <br>[2: Reference BBB](https://usm.maine.edu/)</br>
 <br>[3: Reference CCC](https://usm.maine.edu/)</br>
+
 
