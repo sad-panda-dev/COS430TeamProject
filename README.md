@@ -77,7 +77,8 @@ Upon completion of the three iterations we will then as a group present the fina
 
 #### [2] Class Diagrams
 <p align="justify">
-To be completed by the group members...
+![Screen Shot 2022-03-08 at 9 48 59 AM](https://user-images.githubusercontent.com/80590323/157262004-2ce8f55c-a55f-41d3-b863-4a4bb1db2d80.png)
+
 </p>
 
 #### [3] Sequence Diagrams 
