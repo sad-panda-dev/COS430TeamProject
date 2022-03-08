@@ -83,7 +83,7 @@ To be completed by the group members...
 
 #### [3] Sequence Diagrams 
 <p align="justify">
-To be completed by the group members...
+<img width="1217" alt="Screen Shot 2022-03-07 at 10 38 36 PM" src="https://user-images.githubusercontent.com/80590323/157161674-da4cb146-c78e-4b64-b29c-6a569c5e2e26.png">
 </p>
 
 #### [4] Deployment Diagrams 
@@ -97,6 +97,7 @@ To be completed by the group members...
 <br>[1: Reference AAA](https://usm.maine.edu/)</br>
 <br>[2: Reference BBB](https://usm.maine.edu/)</br>
 <br>[3: Reference CCC](https://usm.maine.edu/)</br>
+
 
 
 
