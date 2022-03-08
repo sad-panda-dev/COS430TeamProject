@@ -87,7 +87,8 @@ To be completed by the group members...
 
 #### [4] Deployment Diagrams 
 <p align="justify">
-To be completed by the group members...
+<img width="779" alt="Screen Shot 2022-03-08 at 9 46 36 AM" src="https://user-images.githubusercontent.com/80590323/157261584-7abbee7d-f536-4662-97f4-6391ff673e2f.png">
+
 </p>
 
 
