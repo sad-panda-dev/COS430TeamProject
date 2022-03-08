@@ -77,7 +77,7 @@ Upon completion of the three iterations we will then as a group present the fina
 
 #### [2] Class Diagrams
 <p align="justify">
-![Screen Shot 2022-03-08 at 9 48 59 AM](https://user-images.githubusercontent.com/80590323/157262004-2ce8f55c-a55f-41d3-b863-4a4bb1db2d80.png)
+![Screen Shot 2022-03-08 at 9 51 32 AM](https://user-images.githubusercontent.com/80590323/157262487-cdba5072-2531-48cb-bfcc-c4043e9c0c0a.png)
 
 </p>
 
@@ -98,6 +98,7 @@ Upon completion of the three iterations we will then as a group present the fina
 <br>[1: Reference AAA](https://usm.maine.edu/)</br>
 <br>[2: Reference BBB](https://usm.maine.edu/)</br>
 <br>[3: Reference CCC](https://usm.maine.edu/)</br>
+
 
 
 
