@@ -74,6 +74,9 @@ def start_menu():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_s:
                     start_press = True
+                elif event.key == pg.K_ESCAPE:
+                    pg.quit()
+                    sys.exit()
 
 ''' Listens for key events and runs the game according to pressed keys.
 Navigates the movement of snake object when up,down,left or right keys are pressed. Closes the window when 'X' 
@@ -113,6 +116,9 @@ def pause(screen, clock):
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_SPACE:
                     paused = False
+                elif event.key == pg.K_ESCAPE:
+                    pg.quit()
+                    sys.exit()
         screen.fill((0, 0, 0))
         text = 'PAUSED'
         text2 = 'Press Space to continue'
@@ -150,16 +156,16 @@ calls game_over(), othervise moves the snake object one square ahead.
 def move_snake(screen, clock, snake):
 
     curr = snake.get_head_position()
-    x, y = snake.direction
+    x, y = snake.get_direction()
     new = (((curr[0] + (x * s.GRID_SIZE)) % s.SCREEN_WIDTH),
            (curr[1] + (y * s.GRID_SIZE)) % s.SCREEN_HEIGHT)
 
-    if len(snake.positions) > 2 and new in snake.positions[2:]:
-        game_over(screen, clock, snake.score)
+    if len(snake.get_positions()) > 2 and new in snake.get_positions()[2:]:
+        game_over(screen, clock, snake.get_score())
     else:
-        snake.positions.insert(0, new)
-        if len(snake.positions) > snake.length:
-            snake.positions.pop()
+        snake.get_positions().insert(0, new)
+        if (len(snake.get_positions()) > snake.get_length()):
+            snake.get_positions().pop()
 
 '''Runs the game. Defines the clock, sets the screen, and defines snake, food and portal objects. Runs the while 
 loop until snake collides with its tail or user exits the screen.
@@ -185,19 +191,19 @@ def run():
         draw_grid(surface)
         move_snake(screen, clock, snake)
 
-        if snake.get_head_position() == food.position:
-            snake.length += 1
-            snake.score += 1
+        if snake.get_head_position() == food.get_position():
+            snake.add_length(1)
+            snake.update_score(1)
             food.random_position()
 
-        if snake.get_head_position() == portal.position:
+        if snake.get_head_position() == portal.get_position():
             snake.hit_portal()
 
         snake.draw(surface)
         food.draw(surface)
         # portal.draw(surface)
         screen.blit(surface, (0, 0))
-        text = my_font.render("Score {0}".format(snake.score), 1, (0, 0, 0))
+        text = my_font.render("Score {0}".format(snake.get_score()), 1, (0, 0, 0))
         screen.blit(text, (5, 10))
         pg.display.update()
 
