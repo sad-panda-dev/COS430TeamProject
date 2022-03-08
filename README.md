@@ -77,7 +77,7 @@ Upon completion of the three iterations we will then as a group present the fina
 
 #### [2] Class Diagrams
 <p align="justify">
-![Screen Shot 2022-03-08 at 9 51 32 AM](https://user-images.githubusercontent.com/80590323/157262487-cdba5072-2531-48cb-bfcc-c4043e9c0c0a.png)
+<img width="1217" alt="Screen Shot 2022-03-08 at 9 51 32 AM" src="https://user-images.githubusercontent.com/80590323/157262487-cdba5072-2531-48cb-bfcc-c4043e9c0c0a.png">
 
 </p>
 
