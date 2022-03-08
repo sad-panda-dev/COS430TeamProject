@@ -9,7 +9,6 @@ class Food(object):
     def __init__(self):
         self.__position = (0, 0)
         self.__color = (204, 0, 0)
-        self.random_position()
 
     '''Getter for position property'''
     def get_position(self):

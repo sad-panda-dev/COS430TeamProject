@@ -9,7 +9,6 @@ class Portal(object):
     def __init__(self):
         self.__position = (0, 0)
         self.__color = (0, 128, 255)
-        self.random_position()
 
 
     '''Getter for position'''

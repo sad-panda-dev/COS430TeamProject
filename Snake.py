@@ -52,13 +52,13 @@ class Snake(object):
         else:
             self.__direction = point
 
-    # this method is currently where Im trying to figure out how to teleport snake(not functioning)
-    def hit_portal(self):
-        new_position = self.get_head_position()
-        # position_variant = random.randint(1, 10)
-        # for position in self.positions:
-        #     position = position * position_variant
-        return new_position
+    # # this method is currently where Im trying to figure out how to teleport snake(not functioning)
+    # def hit_portal(self):
+    #     new_position = self.get_head_position()
+    #     # position_variant = random.randint(1, 10)
+    #     # for position in self.positions:
+    #     #     position = position * position_variant
+    #     return new_position
     '''Draw the snake object on the surface. Snake is a rect at the moment.
     '''
     def draw(self, surface):
