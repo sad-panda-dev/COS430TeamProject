@@ -73,7 +73,7 @@ Upon completion of the three iterations we will then as a group present the fina
 ## UML Diagrams 
 #### [1] Use Case Diagrams
 <p align="justify">
-<img width="412" alt="Screen Shot 2022-03-07 at 12 22 54 PM" src="https://user-images.githubusercontent.com/80590323/157153059-6a9851a0-5f13-47ee-9546-a7e5fc401e4f.png">
+<img width="375" alt="Screen Shot 2022-03-07 at 9 26 13 PM" src="https://user-images.githubusercontent.com/80590323/157154058-76f9fc6a-fdac-4f55-b3f4-69dc37ee4303.png">
 </p>
 
 #### [2] Class Diagrams
@@ -97,5 +97,6 @@ To be completed by the group members...
 <br>[1: Reference AAA](https://usm.maine.edu/)</br>
 <br>[2: Reference BBB](https://usm.maine.edu/)</br>
 <br>[3: Reference CCC](https://usm.maine.edu/)</br>
+
 
 
