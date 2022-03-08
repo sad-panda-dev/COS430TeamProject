@@ -14,7 +14,7 @@
 Below, you will find a brief executive summary of our term project, including how the project will be relevant to end-users.
 </p>
 <p align="justify">
-Our team was tasked with designing, developing and deploying a snake game with the added functionality of teleportation.
+  Our team has set out to create the classic arcade game Snake, with the added functionality of having a teleporter. The game will be a desktop application that is cross-platform to allow fun for as many end users as possible. We will also be creating a high score board stored that will be kept up to date via the internet. This will create a fun competitive environment for all end users to see how their skills match up against each other.
 </p>
 
 ## Problem Statement
@@ -27,11 +27,11 @@ Given this task we set out to design a cross-platform desktop application that w
 ## Milestones and Timelines
 
 #### Iteration #1
-<p> Design, develop, test and deploy a functioning prototype of the traditional game of snake. Based on its functionality we have decided to use python's pygame library to devlop the game.</p>
+<p> Design, develop, test and deploy a functioning prototype of the traditional game of snake. Based on its cross-platform functionality we have decided to use python's pygame library to devlop the game.</p>
 
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
-|  User Story  | To be completed by the group members...                                                                              |
+|  User Story  | Create a functioning Prototype| 
 |    AAA       | To be completed by the group members...                                                                              |
 |    BBB       | To be completed by the group members...                                                                              |
 |    CCC       | To be completed by the group members...                                                                              |
