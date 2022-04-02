@@ -36,11 +36,13 @@ def draw_grid(surface):
             if (x+y) % 2 == 0:
                 r = pg.Rect((x*s.GRID_SIZE, y*s.GRID_SIZE),
                             (s.GRID_SIZE, s.GRID_SIZE))
-                pg.draw.rect(surface, (93, 216, 228), r)
+                pg.draw.rect(surface, (232, 244, 248), r)
+                    # 93, 216, 228), r)
             else:
-                rr = pg.Rect((x*s.GRID_SIZE, y*s.GRID_SIZE),
+                r = pg.Rect((x*s.GRID_SIZE, y*s.GRID_SIZE),
                              (s.GRID_SIZE, s.GRID_SIZE))
-                pg.draw.rect(surface, (196, 249, 255), rr)
+                pg.draw.rect(surface, (232, 244, 248), r)
+                             # (196, 249, 255), rr)
 
 ''' Defines text rectangle and centers it on the screen. Offset argument specifies offset from the horizontal center
 and is convenient when multiple lines of text are written to the screen
@@ -54,7 +56,7 @@ def message_to_screen(screen, text, font_size, color, offset = 0):
     font = pg.font.SysFont("arialblack", font_size)
     screen_text = font.render(text, True, color)
     text_rect = screen_text.get_rect()
-    text_rect.center = (s.SCREEN_HEIGHT // 2 , s.SCREEN_WIDTH // 2 + offset)
+    text_rect.center = (s.SCREEN_HEIGHT // 2 , s.SCREEN_WIDTH // 2 -offset)
     screen.blit(screen_text, text_rect)
     pg.display.update()
 
@@ -63,11 +65,20 @@ message_to_screen() to write text. Listens for user input until 'S' is pressed.
 '''
 def start_menu():
     screen = pg.display.set_mode((s.SCREEN_WIDTH, s.SCREEN_HEIGHT), 0, 32)
-    screen.fill((0,0,0))
+    screen.fill((255,255,255))
+
     text = 'SNAKE TELEPORTER'
     text2 = 'PRESS \"S\" TO START GAME'
-    message_to_screen(screen, text ,42, (124,252,0))
-    message_to_screen(screen, text2 ,20, (124,252,0), 70)
+    message_to_screen(screen, text ,62, (50,205, 50),300)
+    snake_image = pg.image.load('SnakeImage.jpeg').convert_alpha()
+    # r = snake_image.get_rect()
+    # print(r)
+    # print(pg.font.get_fonts())
+    w = 2396
+    h = 3316
+    img = pg.transform.scale(snake_image, (w/5,h/5))
+    screen.blit(img, (170,150))
+    message_to_screen(screen, text2 ,20, (50,205, 50), -350)
     start_press = False
     while not start_press:
         for event in pg.event.get():
@@ -119,12 +130,14 @@ def pause(screen, clock):
                 elif event.key == pg.K_ESCAPE:
                     pg.quit()
                     sys.exit()
-        screen.fill((0, 0, 0))
+        screen.fill((255, 255, 255))
         text = 'PAUSED'
         text2 = 'Press Space to continue'
-        message_to_screen(screen, text ,42, (124,252,0))
-        message_to_screen(screen, text2, 20, (124, 252, 90), 60)
+        message_to_screen(screen, text2, 20, (50, 205, 50), 60)
+        message_to_screen(screen, text ,62, (50,205,50))
         clock.tick(5)
+
+
 '''Notifies that the game has ended. Displays the score and prompts user to play again. Listens for user input and
 if user hits 'S' key, then starts another game.
     :param screen: the screen object
@@ -132,20 +145,28 @@ if user hits 'S' key, then starts another game.
     :param score: integer user score 
 '''
 def game_over(screen, clock, score):
-    screen.fill((0, 0, 0))
+    screen.fill((255, 255, 255))
     text = 'GAME OVER'
-    text2 = 'Your score is ' + str(score)
-    text3 = 'Press S to play again'
-    message_to_screen(screen, text, 42, (124, 252, 0))
-    message_to_screen(screen, text2, 20, (124, 252, 0), 70)
-    message_to_screen(screen, text3, 20, (124, 252, 0), 100)
+    text2 = 'YOUR SCORE IS '
+    text3 = str(score)
+    text4 = 'PRESS "S" TO PLAY AGAIN'
+    message_to_screen(screen, text, 62, (50, 205, 50))
+    message_to_screen(screen, text2, 20, (50, 205, 50), -70)
+    message_to_screen(screen, text3, 32, (50, 205, 50), -100)
+    message_to_screen(screen, text4, 20, (50, 205, 50), -130)
     clock.tick(5)
     play_again = False
     while not play_again:
         for event in pg.event.get():
+            if event.type == pg.QUIT:
+                pg.quit()
+                sys.exit()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_s:
                     play_again = True
+                elif event.key == pg.K_ESCAPE:
+                    pg.quit()
+                    sys.exit()
     run()
 '''Gets the position of the Snake object parameter, and checks if snake colided with itself. If this is the case, 
 calls game_over(), othervise moves the snake object one square ahead.
