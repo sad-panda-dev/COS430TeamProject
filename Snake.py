@@ -13,7 +13,7 @@ class Snake(object):
         self.__length = 1
         self.__positions = [((s.SCREEN_WIDTH / 2), (s.SCREEN_HEIGHT / 2))]
         self.__direction = random.choice([s.UP, s.DOWN, s.LEFT, s.RIGHT])
-        self.__color = (0, 0, 0)
+        self.__color = (0, 255, 0)
         # initiate the score to zero
         self.__score = 0
 
