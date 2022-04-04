@@ -4,7 +4,7 @@ import pygame as pg
 import random
 import setup as s
 import sys
-
+from pathlib import Path
 
 class Snake(object):
     ''' Constructor for Snake object
@@ -35,6 +35,12 @@ class Snake(object):
     '''Getter for score'''
     def get_score(self):
         return self.__score
+    '''Setter for position'''
+    '''Trying to change all positions by x for teleport'''
+    def set_positions(self, x):
+
+        for i in self.__positions:
+            self.__positions[i] = self.__positions[i] + x
 
     '''Function to add to the length of snake'''
     def add_length(self, integer):
