@@ -19,7 +19,7 @@ has asked for we could just use this version of the game for the first itteratio
 implementing the items above for the next iterations and scrap any of my suggestions about what we might
 want to achieve in further itterations. Again this is all things to discuss.
 '''
-
+import random
 import sys
 import Snake as sn
 import Food as fd
@@ -66,7 +66,9 @@ def message_to_screen(screen, text, font_size, color, offset=0):
     pg.display.update()
 
 
-'''Defines the starting screen: sets the color of background, and text to be written on screen. Calls
+
+'''Defines the starting screen: sets the color of background, and text to be written on screen. Calls 
+
 message_to_screen() to write text. Listens for user input until 'S' is pressed.
 '''
 def data_menu():
@@ -211,7 +213,9 @@ def handle_keys(snake, screen, clock):
 
 def pause(screen, clock):
     pause_sound = pg.mixer.Sound(
-    Path(__file__).parent / "../snake_game/assets/sounds/smb_pause.wav")
+
+    Path(__file__).parent / "../COS430TeamProject/assets/sounds/smb_pause.wav")
+
     paused = True
     pause_sound.play()
     while paused:
@@ -258,6 +262,31 @@ def drawhighScore(score):
     screen.blit(highscoreSurf, highscoreRect)
 
 
+def drawhighScore(score):
+    my_font = pg.font.SysFont("arialblack", 30)
+
+    with open("highscore.txt", "r+") as hisc:
+        hi = hisc.read()
+        if not hi:  # not hi will only be true for strings on an empty string
+            hi = '0'
+        if score > int(hi):
+            # We already read to the end. We need to go back to the start
+            hisc.seek(0)
+            hisc.write(str(score))
+            hisc.truncate()  # Delete anything left over... not strictly necessary
+            # mydb = mysql.connector.connect(
+            #     host="localhost", user="root", passwd="", database="snake_game")
+            # mycursor = mydb.cursor()
+            # mycursor.execute(
+            #     "INSERT INTO highscores (username, score) VALUES (%s, %s)", (name, score))
+            #
+            # mydb.commit()
+
+    highscoreSurf = my_font.render('HighScore: %s' % hi, True, (0, 0, 0))
+    highscoreRect = highscoreSurf.get_rect()
+    highscoreRect.topright = (s.SCREEN_WIDTH - 150, 10)
+    screen.blit(highscoreSurf, highscoreRect)
+
 '''Notifies that the game has ended. Displays the score and prompts user to play again. Listens for user input and
 if user hits 'S' key, then starts another game.
     :param screen: the screen object
@@ -265,17 +294,20 @@ if user hits 'S' key, then starts another game.
     :param score: integer user score 
 '''
 def game_over(screen, clock, score):
-    #sound game over
-    game_over_sound = pg.mixer.Sound(Path(
-        __file__).parent / "../snake_game/assets/sounds/snake_dies_game_over.mp3")
 
+    # sound game over
+    game_over_sound = pg.mixer.Sound(Path(
+        __file__).parent / "../COS430TeamProject/assets/sounds/snake_dies_game_over.mp3")
     screen.fill((255, 255, 255))
     text = 'GAME OVER'
-    text2 = str(name) + ' your score is ' + '\"' +str(score)+ ' \"' 
-    text3 = 'Press S to play again, or Q to QUIT'
+    text2 = str(name) + 'YOUR SCORE IS ' + '\"' + str(score) + ' \"'
+    # text3 = str(score)
+    text4 = 'PRESS "S" TO PLAY AGAIN'
     message_to_screen(screen, text, 62, (50, 205, 50))
     message_to_screen(screen, text2, 20, (50, 205, 50), -70)
-    message_to_screen(screen, text3, 20, (50, 205, 50), -130)
+    #message_to_screen(screen, text3, 32, (50, 205, 50), -100)
+    message_to_screen(screen, text4, 20, (50, 205, 50), -130)
+
     clock.tick(5)
     play_again = False
     game_over_sound.play()
@@ -283,17 +315,22 @@ def game_over(screen, clock, score):
         for event in pg.event.get():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_s:
+                    game_over_sound.stop()
                     play_again = True
                 if event.key == pg.K_q:  # Quit the game
                     sys.exit()
     run()
+
+
 '''Gets the position of the Snake object parameter, and checks if snake colided with itself. If this is the case, 
 calls game_over(), othervise moves the snake object one square ahead.
     :param screen: screen object
     :param clock: clock for the game
     :param snake: snake object
 '''
-def move_snake(screen, clock, snake,food):
+
+
+def move_snake(screen, clock, snake):
 
     curr = snake.get_head_position()
     x, y = snake.get_direction()
@@ -315,9 +352,13 @@ loop until snake collides with its tail or user exits the screen.
 def run():
     clock = pg.time.Clock()
     screen = pg.display.set_mode((s.SCREEN_WIDTH, s.SCREEN_HEIGHT), 0, 32)
+
     # Sound
-    eat_sound = pg.mixer.Sound(Path(__file__).parent / "../snake_game/assets/sounds/food.mp3") #sound eating food
-    pg.mixer.music.load(Path(__file__).parent /"../snake_game/assets/sounds/background1.mp3") #background sound
+    eat_sound = pg.mixer.Sound(
+        Path(__file__).parent / "../COS430TeamProject/assets/sounds/food.mp3")  # sound eating food
+    pg.mixer.music.load(
+        Path(__file__).parent / "../COS430TeamProject/assets/sounds/background1.mp3")  # background sound
+
     pg.mixer.music.play(-1)
     surface = pg.Surface(screen.get_size())
     surface = surface.convert()
@@ -334,7 +375,9 @@ def run():
         # handle keydown events
         handle_keys(snake, screen, clock)
         draw_grid(surface)
-        move_snake(screen, clock, snake,food)
+
+        move_snake(screen, clock, snake)
+        #print(snake.get_positions())
 
         if snake.get_head_position() == food.get_position():
             # snake.__positions = snake.hit_portal()
@@ -343,11 +386,19 @@ def run():
             snake.update_score(1)
             eat_sound.play()
             food.random_position()
+
+
+        if snake.get_head_position() == portal.get_position():
+            #print("hit teleporter")
+            #i = random.randint(1,10)
+            #snake.set_positions(i)
             snake.hit_portal()
- 
+            portal.random_position()
+
+
         snake.draw(surface)
         food.draw(surface)
-        # portal.draw(surface)
+        portal.draw(surface)
         screen.blit(surface, (0, 0))
         text = my_font.render("Score {0}".format(snake.get_score()), 1, (0, 0, 0))
         drawhighScore(snake.get_score())
