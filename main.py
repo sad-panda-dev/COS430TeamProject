@@ -348,6 +348,7 @@ def run():
             #print("hit teleporter")
             #i = random.randint(1,10)
             #snake.set_positions(i)
+            snake.hit_portal()
             portal.random_position()
 
         snake.draw(surface)
