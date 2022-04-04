@@ -60,11 +60,10 @@ class Snake(object):
 
     # this method is currently where Im trying to figure out how to teleport snake(not functioning)
     def hit_portal(self):
-        new_position = self.get_head_position()
-        # position_variant = random.randint(1, 10)
-        # for position in self.positions:
-        #     position = position * position_variant
-        return new_position
+        pd_pos = (random.randint(0, s.GRID_WIDTH - 1) * s.GRID_SIZE, random.randint(0, s.GRID_HEIGHT - 1) * s.GRID_SIZE)
+        self.__positions[0] = pd_pos
+
+        return pd_pos
     '''Draw the snake object on the surface. Snake is a rect at the moment.
     '''
     def draw(self, surface):
