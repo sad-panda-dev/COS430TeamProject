@@ -19,19 +19,19 @@ class Snake(object):
         
         # load head image 
         self.faceing = self.__direction
-        self.snake_head = pg.image.load(Path(__file__).parent / "../snake_game/assets/images/head.png").convert()
+        self.snake_head = pg.image.load(Path(__file__).parent / "assets/images/head.png").convert()
         self.snake_head = pg.transform.scale(self.snake_head,(s.GRID_SIZE,s.GRID_SIZE))
         self.snake_head.set_colorkey((0,0,0))
 
-        self.snake_headL = pg.image.load(Path(__file__).parent / "../snake_game/assets/images/headL.png").convert()
+        self.snake_headL = pg.image.load(Path(__file__).parent / "assets/images/headL.png").convert()
         self.snake_headL = pg.transform.scale(self.snake_headL,(s.GRID_SIZE,s.GRID_SIZE))
         self.snake_headL.set_colorkey((0,0,0))
 
-        self.snake_headR = pg.image.load(Path(__file__).parent / "../snake_game/assets/images/headR.png").convert()
+        self.snake_headR = pg.image.load(Path(__file__).parent / "assets/images/headR.png").convert()
         self.snake_headR = pg.transform.scale(self.snake_headR,(s.GRID_SIZE,s.GRID_SIZE))
         self.snake_headR.set_colorkey((0,0,0))
         # load body image
-        self.snake_body = pg.image.load(Path(__file__).parent / "../snake_game/assets/images/body.png").convert()
+        self.snake_body = pg.image.load(Path(__file__).parent / "assets/images/body.png").convert()
         self.snake_body = pg.transform.scale(self.snake_body,(s.GRID_SIZE,s.GRID_SIZE))
         self.snake_body.set_colorkey((0,0,0))
 

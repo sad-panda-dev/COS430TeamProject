@@ -39,12 +39,12 @@ def draw_grid(surface):
                 r = pg.Rect((x*s.GRID_SIZE, y*s.GRID_SIZE),
                             (s.GRID_SIZE, s.GRID_SIZE))
                 pg.draw.rect(surface, (232, 244, 248), r)
-                    # 93, 216, 228), r)
+
             else:
                 r = pg.Rect((x*s.GRID_SIZE, y*s.GRID_SIZE),
                              (s.GRID_SIZE, s.GRID_SIZE))
                 pg.draw.rect(surface, (232, 244, 248), r)
-                             # (196, 249, 255), rr)
+
 
 
 ''' Defines text rectangle and centers it on the screen. Offset argument specifies offset from the horizontal center
@@ -74,20 +74,20 @@ message_to_screen() to write text. Listens for user input until 'S' is pressed.
 def data_menu():
     global name, btnS, btnE, surface, screen
     screen = pg.display.set_mode((s.SCREEN_WIDTH, s.SCREEN_HEIGHT), 0, 32)
-    screen.fill((0, 0, 0))
+    screen.fill((255, 255, 255))
 
     # This rectangle will be boundary for input
-    input_box = pg.Rect(int(s.SCREEN_WIDTH * 0.2)+120,
+    input_box = pg.Rect(int(s.SCREEN_WIDTH * 0.2)+140,
                         int(s.SCREEN_WIDTH / 3)+3, 375, 44)
     # The color for inactive input box
-    color_inactive = pg.Color((255, 255, 255))
+    color_inactive = pg.Color((0, 0, 0))
     color_active = pg.Color((124, 252, 0))  # color for active input box
     color1 = color_inactive
     active = False  # initially status of box is active
     names = 'Name:'  # This will be displayed as Name
     name = ''  # This variable will store name of the user
-    txt_surface1 = pg.font.SysFont("comicsansms", 25).render(
-        names, True, (124, 252, 0))  # The Name font is rendered
+    txt_surface1 = pg.font.SysFont("arialblack", 25).render(
+        names, True, (50, 205, 50))  # The Name font is rendered
     text2 = 'Exit'
 
     # Game start variable will look for if game start or play button is pressed
@@ -125,24 +125,24 @@ def data_menu():
 
         # Creating different text surfaces for Exit, Play and name
         txt_surface2 = pg.font.SysFont(
-            "comicsansms", 25).render(text2, True, (124, 252, 0))
-        txt_surface4 = pg.font.SysFont("comicsansms", 25).render(
-            'Play', True, (124, 252, 0))
+            "arialblack", 25).render(text2, True, (50, 205, 50))
+        txt_surface4 = pg.font.SysFont("arialblack", 25).render(
+            'Play', True, (50, 205, 50))
         txt_surface3 = pg.font.SysFont(
-            "comicsansms", 25).render(name, True, (255, 255, 255))
+            "arialblack", 25).render(name, True, (50, 205, 50))
 
-        # Name boxe
-        nam = pg.draw.rect(screen, (0, 0, 0), pg.Rect(
+        # Name box
+        nam = pg.draw.rect(screen, (255, 255, 255), pg.Rect(
             int(s.SCREEN_WIDTH * 0.2), int(s.SCREEN_WIDTH / 3), 500, 50))
         screen.blit(txt_surface1, (int(s.SCREEN_WIDTH * 0.25),
                     int(s.SCREEN_WIDTH / 3)))
         # Exit Button
-        btnE = pg.draw.rect(screen, (0, 0, 0), pg.Rect(
+        btnE = pg.draw.rect(screen, (255, 255, 255), pg.Rect(
             int(s.SCREEN_WIDTH * 0.45), int(s.SCREEN_WIDTH * 3 / 7), 200, 50))
         screen.blit(txt_surface2, (int(s.SCREEN_WIDTH * 0.65),
                     int(s.SCREEN_WIDTH * 3 / 7)))
         # Start or Play button
-        btnS = pg.draw.rect(screen, (0, 0, 0), pg.Rect(
+        btnS = pg.draw.rect(screen, (255, 255, 255), pg.Rect(
             int(s.SCREEN_WIDTH * 0.35), int(s.SCREEN_WIDTH * 3 / 7), 200, 50))
         screen.blit(txt_surface4, (int(s.SCREEN_WIDTH * 0.4),
                     int(s.SCREEN_WIDTH * 3 / 7)))
@@ -158,10 +158,7 @@ def start_menu():
     text = 'SNAKE TELEPORTER'
     text2 = 'PRESS \"S\" TO START GAME'
     message_to_screen(screen, text, 62, (50, 205, 50), 300)
-    snake_image = pg.image.load(Path(__file__).parent / "../snake_game/assets/images/SnakeImage.jpeg").convert_alpha()
-    # r = snake_image.get_rect()
-    # print(r)
-    # print(pg.font.get_fonts())
+    snake_image = pg.image.load(Path(__file__).parent / "assets/images/SnakeImage.jpeg").convert_alpha()
     w = 2396
     h = 3316
     img = pg.transform.scale(snake_image, (int(w/5), int(h/5)))
@@ -170,6 +167,9 @@ def start_menu():
     start_press = False
     while not start_press:
         for event in pg.event.get():
+            if event.type == pg.QUIT:
+                pg.quit()
+                sys.exit()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_s:
                     start_press = True
@@ -212,12 +212,12 @@ def handle_keys(snake, screen, clock):
 
 
 def pause(screen, clock):
-    pause_sound = pg.mixer.Sound(
+    #pause_sound = pg.mixer.Sound(
 
-    Path(__file__).parent / "../COS430TeamProject/assets/sounds/smb_pause.wav")
+    #Path(__file__).parent / "../COS430TeamProject/assets/sounds/smb_pause.wav")
 
     paused = True
-    pause_sound.play()
+    #pause_sound.play()
     while paused:
         for event in pg.event.get():
             if event.type == pg.QUIT:
@@ -226,10 +226,9 @@ def pause(screen, clock):
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_SPACE:
                     paused = False
-                    pause_sound.play()
                 if event.key == pg.K_q:  # Quit the game
                     sys.exit()
-        screen.fill((0, 0, 0))
+        screen.fill((255, 255, 255))
         text = 'PAUSED'
         text2 = 'Press Space to continue or Q to QUIT'
         message_to_screen(screen, text2, 20, (50, 205, 50), 60)
@@ -256,7 +255,7 @@ def drawhighScore(score):
 
             mydb.commit()
 
-    highscoreSurf = my_font.render('HighScore: %s' % hi, True, (0, 0, 0))
+    highscoreSurf = my_font.render('Highest Score: %s' % hi, True, (50, 205, 50))
     highscoreRect = highscoreSurf.get_rect()
     highscoreRect.topright = (s.SCREEN_WIDTH - 150, 10)
     screen.blit(highscoreSurf, highscoreRect)
@@ -282,7 +281,7 @@ def drawhighScore(score):
             #
             # mydb.commit()
 
-    highscoreSurf = my_font.render('HighScore: %s' % hi, True, (0, 0, 0))
+    highscoreSurf = my_font.render('HighScore: %s' % hi, True, (50, 205, 50))
     highscoreRect = highscoreSurf.get_rect()
     highscoreRect.topright = (s.SCREEN_WIDTH - 150, 10)
     screen.blit(highscoreSurf, highscoreRect)
@@ -300,12 +299,10 @@ def game_over(screen, clock, score):
         __file__).parent / "../COS430TeamProject/assets/sounds/snake_dies_game_over.mp3")
     screen.fill((255, 255, 255))
     text = 'GAME OVER'
-    text2 = str(name) + 'YOUR SCORE IS ' + '\"' + str(score) + ' \"'
-    # text3 = str(score)
+    text2 = str(name) + ', YOUR SCORE IS ' + str(score)
     text4 = 'PRESS "S" TO PLAY AGAIN'
     message_to_screen(screen, text, 62, (50, 205, 50))
     message_to_screen(screen, text2, 20, (50, 205, 50), -70)
-    #message_to_screen(screen, text3, 32, (50, 205, 50), -100)
     message_to_screen(screen, text4, 20, (50, 205, 50), -130)
 
     clock.tick(5)
@@ -313,6 +310,9 @@ def game_over(screen, clock, score):
     game_over_sound.play()
     while not play_again:
         for event in pg.event.get():
+            if event.type == pg.QUIT:
+                pg.quit()
+                sys.exit()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_s:
                     game_over_sound.stop()
@@ -377,30 +377,26 @@ def run():
         draw_grid(surface)
 
         move_snake(screen, clock, snake)
-        #print(snake.get_positions())
 
         if snake.get_head_position() == food.get_position():
-            # snake.__positions = snake.hit_portal()
+
             print(snake.get_head_position())
             snake.add_length(1)
             snake.update_score(1)
             eat_sound.play()
             food.random_position()
 
-
         if snake.get_head_position() == portal.get_position():
-            #print("hit teleporter")
-            #i = random.randint(1,10)
-            #snake.set_positions(i)
             snake.hit_portal()
             portal.random_position()
+
 
 
         snake.draw(surface)
         food.draw(surface)
         portal.draw(surface)
         screen.blit(surface, (0, 0))
-        text = my_font.render("Score {0}".format(snake.get_score()), 1, (0, 0, 0))
+        text = my_font.render("Score {0}".format(snake.get_score()), 1, (50, 205, 50))
         drawhighScore(snake.get_score())
         screen.blit(text, (5, 10))
         pg.display.update()

@@ -9,7 +9,7 @@ class Food(object):
     '''Constructor for the Food object'''
     def __init__(self):
         self.__position = (0, 0)
-        self.image = pg.image.load(Path(__file__).parent / "../snake_game/assets/images/Apple.png")
+        self.image = pg.image.load(Path(__file__).parent / "assets/images/Apple.png")
         self.random_position()
 
     '''Getter for position property'''
