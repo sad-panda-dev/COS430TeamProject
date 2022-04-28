@@ -31,10 +31,10 @@ Given this task we set out to design a cross-platform desktop application that w
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
 |  User Story  | Create a functioning Prototype| 
-|    AAA       | To be completed by the group members...                                                                              |
-|    BBB       | To be completed by the group members...                                                                              |
-|    CCC       | To be completed by the group members...                                                                              |
-|    DDD       | To be completed by the group members...                                                                              |
+|    Created prototype      | To be completed by the group members...                                                                              |
+|    Pause Screen       | To be completed by the group members...                                                                              |
+|    Game Over Screen       | To be completed by the group members...                                                                              |
+|    Start Screen       | To be completed by the group members...                                                                              |
 |    EEE       | To be completed by the group members...                                                                              |
 
 
