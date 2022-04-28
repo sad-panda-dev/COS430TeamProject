@@ -4,7 +4,7 @@
   <br> <strong>Group ID:</strong> G 03</br>
   <br> <strong>Group Members:</strong> Richard, Aleksandra, Abdallah</br>
   <br> <strong>Project Title:</strong> A game of Snake where there is an added element of teleporters.</br>
-  <br> <strong>Project Description:</strong> Our team was given the task of designing, developing and implementing a software product that was suggested by a customer (in this case one of our fellow classmates). Following the Agile Software Development Method we will approach the problem through 3 separate iterations over the course of the semester. For each iteration we will address 1 user story and provide a deliverable product upon completion of each iteration. For version control and documentation we will be using this GitHub repository, and for continuous integration we will be using circles. This continuous integration will ensure that each individual part of the software is made properly, pass quality assurance tests as well as be assembled properly. The continuous delivery that the assembled product is efficient.</br>
+  <br> <strong>Project Description:</strong> Our team was given the task of designing, developing and implementing a software product that was suggested by a customer (in this case one of our fellow classmates). Following the Agile Software Development Method we will approach the problem through 3 separate iterations over the course of the semester. For each iteration we will address 1 user story and provide a deliverable product upon completion of each iteration. For version control and documentation we will be using this GitHub repository.</br>
  </p>
 
 ## Executive Summary
@@ -91,10 +91,11 @@ Upon completion of the three iterations we will then as a group present the fina
 
 ## References and Further Information 
 
-<br>[1: Reference AAA](https://usm.maine.edu/)</br>
-<br>[2: Reference BBB](https://usm.maine.edu/)</br>
-<br>[3: Reference CCC](https://usm.maine.edu/)</br>
-
+<br>[1: Pygame](https://www.pygame.org/news)</br>
+<br>[2: Python](https://www.python.org/)</br>
+<br>[3: Adobe Stock Images](https://stock.adobe.com/)</br>
+<br>[3: MySQL](https://www.mysql.com/)</br>
+<br>[3: Laravel](https://laravel.com/)</br>
 
 
 
