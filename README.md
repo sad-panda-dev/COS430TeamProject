@@ -43,7 +43,7 @@ Given this task we set out to design a cross-platform desktop application that w
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
 |  User Story  | Add teleportation to the game as well as add more stylistic changes to give the overall game experience a more congruent retro feel                                                                             | satisfied
-|    Sprites Added       | Added sprites for the snake head, snake body and the food                                                                               |
+|    Sprites Added       | Added sprites for the snake head, snake body and the food                                                                               | satisfied
 |    Sounds Added       | We added background music durring game play, a sound to signify the snake ate food, a sound when entering the pause screen and a sound signifying game over                                                                              | satisfied
 |    Username functionality       | We made it so a user can enter a username and the database stored on the local host will keep track of a usernames highscore                                                                            | satisfied
 |    Teleporter added       | Teleporter now randomly generates on screen and when the snake hits it, the snake will randomly teleport to another part of the screen on part at a time                                                                           | satisfied
@@ -52,7 +52,7 @@ Given this task we set out to design a cross-platform desktop application that w
 
 
 #### Iteration #3
-<p>We will either be creating the website or finishing it depending on the progress made within the second iteration. The functionality of the website is to host a place where members of the class can download the game to play it. The website was developed using Laravel and javascript. The second functionality of the website would be then to store a high score database, which upon generation of a score within any instance of the game, rather than storing the high score on the users local machine the high score could then be stored within the high score database on the website.</p>
+<p>We will either be creating the website or finishing it depending on the progress made within the second iteration. The functionality of the website is to host a place where members of the class can download the game to play it. The website was developed using Laravel and javascript. The second functionality of the website would be then to store a high score database, which upon generation of a score within any instance of the game, rather than storing the high score on the users local machine the high score could then be stored within the high score database on the website. As of right now the website is only locally hosted.</p>
 
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
