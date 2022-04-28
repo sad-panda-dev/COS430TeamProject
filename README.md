@@ -31,10 +31,10 @@ Given this task we set out to design a cross-platform desktop application that w
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
 |  User Story  | Create a functioning Prototype| 
-|    Created prototype      | Basic game functionality, movement with directional buttons, snake eats food and grows in size, score increments by 1. Snake hits its body and game is over                                                                            |
-|    Pause Screen       | User can press space bar to enter a pause state in the game                                                                             |
-|    Game Over Screen       | When the game ends the user enters a game over screen, where they will be given the option to play again                                                                             |
-|    Start Screen       | When game starts the start screen is inititated giving a prompt for the user to start the game                                                                             |
+|    Created prototype      | Basic game functionality, movement with directional buttons, snake eats food and grows in size, score increments by 1. Snake hits its body and game is over                                                                            | Satisfied
+|    Pause Screen       | User can press space bar to enter a pause state in the game                                                                             | Satisfied
+|    Game Over Screen       | When the game ends the user enters a game over screen, where they will be given the option to play again                                                                             |  Satisfied
+|    Start Screen       | When game starts the start screen is inititated giving a prompt for the user to start the game                                                                             | Satisfied
 
 
 #### Iteration #2
