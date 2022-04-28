@@ -58,7 +58,7 @@ Given this task we set out to design a cross-platform desktop application that w
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
 |  User Story  | Overall theme was finalized and made sure to be continuous throughout different screens, added website to store high score database                                                                              | satisfied
 |    Website | Basic website where user can check their high score was created but is only on the local host                                                                             | satisfied
-|    Minor Bugs Fixed       | Took care of any remaining minor bugs                                                                            |
+|    Minor Bugs Fixed       | Took care of any remaining minor bugs                                                                            | satisfied
 |    Teleport Sprite Added       | We added the sprite for the teleporter so it matched the style for the rest of the game components                                                                            | satisfied
 |    Final Tweaks to Theme       | Made sure that all colors and fonts matched between different screens due to slight reverts when merging subsequent branches                                                                              | satisfied
 
@@ -74,8 +74,7 @@ Upon completion of the three iterations we will then as a group present the fina
 
 #### [2] Class Diagrams
 <p align="justify">
-![class_di](https://user-images.githubusercontent.com/80590323/165659252-d6a8c9a9-f9e7-410d-8ce4-50427cb6da46.png)
-
+<img width="843" alt="Screen Shot 2022-04-27 at 9 42 41 PM" src="https://user-images.githubusercontent.com/80590323/165659605-fd189e0e-a107-482a-999c-44751c30c5bb.png">
 </p>
 
 #### [3] Sequence Diagrams 
@@ -95,6 +94,7 @@ Upon completion of the three iterations we will then as a group present the fina
 <br>[1: Reference AAA](https://usm.maine.edu/)</br>
 <br>[2: Reference BBB](https://usm.maine.edu/)</br>
 <br>[3: Reference CCC](https://usm.maine.edu/)</br>
+
 
 
 
