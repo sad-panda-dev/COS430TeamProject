@@ -30,7 +30,7 @@ Given this task we set out to design a cross-platform desktop application that w
 
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
-|  User Story  | Create a functioning Prototype| 
+|  User Story  | Create a functioning Prototype| satisfied
 |    Created prototype      | Basic game functionality, movement with directional buttons, snake eats food and grows in size, score increments by 1. Snake hits its body and game is over                                                                            | Satisfied
 |    Pause Screen       | User can press space bar to enter a pause state in the game                                                                             | Satisfied
 |    Game Over Screen       | When the game ends the user enters a game over screen, where they will be given the option to play again                                                                             |  Satisfied
@@ -52,7 +52,7 @@ Given this task we set out to design a cross-platform desktop application that w
 
 
 #### Iteration #3
-<p>We will either be creating the website or finishing it depending on the progress made within the second iteration. The functionality of the website is to host a place where members of the class can download the game to play it. The initial idea is to use the django framework to develop the website. The second functionality of the website would be then to store a high score database, which upon generation of a score within any instance of the game, rather than storing the high score on the users local machine the high score could then be stored within the high score database on the website.</p>
+<p>We will either be creating the website or finishing it depending on the progress made within the second iteration. The functionality of the website is to host a place where members of the class can download the game to play it. The website was developed using Laravel and javascript. The second functionality of the website would be then to store a high score database, which upon generation of a score within any instance of the game, rather than storing the high score on the users local machine the high score could then be stored within the high score database on the website.</p>
 
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
