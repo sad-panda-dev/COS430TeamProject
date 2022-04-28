@@ -42,12 +42,12 @@ Given this task we set out to design a cross-platform desktop application that w
 
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
-|  User Story  | To be completed by the group members...                                                                              |
-|    AAA       | To be completed by the group members...                                                                              |
-|    BBB       | To be completed by the group members...                                                                              |
-|    CCC       | To be completed by the group members...                                                                              |
-|    DDD       | To be completed by the group members...                                                                              |
-|    EEE       | To be completed by the group members...                                                                              |
+|  User Story  | Add teleportation to the game as well as add more stylistic changes to give the overall game experience a more congruent retro feel                                                                             | satisfied
+|    Sprites Added       | Added sprites for the snake head, snake body and the food                                                                               |
+|    Sounds Added       | We added background music durring game play, a sound to signify the snake ate food, a sound when entering the pause screen and a sound signifying game over                                                                              | satisfied
+|    Username functionality       | We made it so a user can enter a username and the database stored on the local host will keep track of a usernames highscore                                                                            | satisfied
+|    Teleporter added       | Teleporter now randomly generates on screen and when the snake hits it, the snake will randomly teleport to another part of the screen on part at a time                                                                           | satisfied
+|    Style/Theme       | Gave the overall game a more retro feel with image on start screen as well as the font and color scheme for other screens of the game                                                                             | satisfied
 
 
 
