@@ -56,13 +56,11 @@ Given this task we set out to design a cross-platform desktop application that w
 
 | Items        | Description              | Action Items and Deliverables                                                             |
 |--------------|--------------------------|-------------------------------------------------------------------------------------------|
-|  User Story  | To be completed by the group members...                                                                              |
-|    AAA       | To be completed by the group members...                                                                              |
-|    BBB       | To be completed by the group members...                                                                              |
-|    CCC       | To be completed by the group members...                                                                              |
-|    DDD       | To be completed by the group members...                                                                              |
-|    EEE       | To be completed by the group members...                                                                              |
-
+|  User Story  | Overall theme was finalized and made sure to be continuous throughout different screens, added website to store high score database                                                                              | satisfied
+|    Website | Basic website where user can check their high score was created but is only on the local host                                                                             | satisfied
+|    Minor Bugs Fixed       | Took care of any remaining minor bugs                                                                            |
+|    Teleport Sprite Added       | We added the sprite for the teleporter so it matched the style for the rest of the game components                                                                            | satisfied
+|    Final Tweaks to Theme       | Made sure that all colors and fonts matched between different screens due to slight reverts when merging subsequent branches                                                                              | satisfied
 
 **Final Team Presentation:**
 Upon completion of the three iterations we will then as a group present the final software product that we have developed.
@@ -76,7 +74,7 @@ Upon completion of the three iterations we will then as a group present the fina
 
 #### [2] Class Diagrams
 <p align="justify">
-<img width="1217" alt="Screen Shot 2022-03-08 at 9 51 32 AM" src="https://user-images.githubusercontent.com/80590323/157262487-cdba5072-2531-48cb-bfcc-c4043e9c0c0a.png">
+![class_di](https://user-images.githubusercontent.com/80590323/165659252-d6a8c9a9-f9e7-410d-8ce4-50427cb6da46.png)
 
 </p>
 
